@@ -102,3 +102,5 @@ Przykład:
   - `HIGH` = wyłączony
 - Jeśli LED świeci cały czas, spróbuj odwrócić logikę w kodzie
 - W następnym kroku zamiast diody LED podłączymy pompkę wody
+- Jeśli przekaźnik działa niestabilnie, sprobuj użyć tranzystora z kroku 3a
+ 
