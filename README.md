@@ -8,6 +8,8 @@ Projekt został przygotowany w formie kolejnych kroków. W każdym kroku dodawan
 
 Do realizacji projektu wykorzystamy między innymi czujnik wilgotności gleby, wyświetlacz OLED, potencjometr, przekaźnik oraz pompkę wody.
 
+Na podstawie projektu powstał również film na YouTube: [Zobacz realizację krok po kroku](https://youtu.be/9MOAs3CQpxQ).
+
 ## Struktura projektu
 
 ```text
