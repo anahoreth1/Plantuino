@@ -1,4 +1,4 @@
-# Krok 3 - Moduł przekaźnika dla diody LED
+# Krok 4 - Moduł przekaźnika dla diody LED
 
 W przyszłości chcemy podłączyć pompkę do automatycznego podlewania roślin.  
 Do sterowania pompką potrzebny będzie moduł przekaźnika (relay module).
@@ -12,7 +12,7 @@ Arduino może wysłać sygnał do przekaźnika, a przekaźnik włączy lub wył�
 
 Dzięki temu możemy sterować urządzeniami wymagającymi większego prądu niż może dostarczyć Arduino.
 
-![Relay](./images/step-03-relay_schema.png)
+![Relay](./images/step-04-relay_schema.png)
 
 ## Wymagane elementy
 
@@ -23,7 +23,7 @@ Dzięki temu możemy sterować urządzeniami wymagającymi większego prądu ni�
 - Przewody połączeniowe
 - Kabel USB
 
-![Części](./images/step-03-parts.png)
+![Części](./images/step-04-parts.png)
 
 ## Schemat połączenia
 
@@ -52,7 +52,7 @@ Na niektórych modułach (jak tutaj u nas) można również zobaczyć chińskie 
 - `公共` = `COM` (środkowy pin)
 - `常闭` = `NC` (obok zielonej diody LED)
 
-![Opis przekaźnika](./images/step-03-relay-labels.png)
+![Opis przekaźnika](./images/step-04-relay-labels.png)
 
 Wejścia przekaźnika:
 
@@ -72,7 +72,7 @@ Wyjścia przekaźnika:
 Zatym katodą LED lączymy do rezystor 330Ω, a zatym do GND.
 
 
-![Schemat](./images/step-03-connection.png)
+![Schemat](./images/step-04-connection.png)
 
 ## Jak to działa?
 
@@ -82,7 +82,7 @@ Gdy przekaźnik zostanie aktywowany, dioda LED zapali się.
 
 ## Kod programu
 
-Odpowiedni kod znajduje się w [src/step_03](./../src/step_03/step_03.ino).
+Odpowiedni kod znajduje się w [src/step_04](./../src/step_04/step_04.ino).
 
 ## Wynik
 
@@ -93,7 +93,7 @@ Po uruchomieniu programu:
 
 Przykład:
 
-<video src="./images/step-03-result.mp4" controls width="300"></video>
+<video src="./images/step-04-result.mp4" controls width="300"></video>
 
 ## Uwagi
 
@@ -102,5 +102,5 @@ Przykład:
   - `HIGH` = wyłączony
 - Jeśli LED świeci cały czas, spróbuj odwrócić logikę w kodzie
 - W następnym kroku zamiast diody LED podłączymy pompkę wody
-- Jeśli przekaźnik działa niestabilnie, sprobuj użyć tranzystora z kroku 3a
+- Jeśli przekaźnik działa niestabilnie, sprobuj użyć tranzystora z kroku 4a
  

@@ -1,4 +1,4 @@
-# Krok 3a - Tranzystor 2N2222A dla diody LED
+# Krok 4a - Tranzystor 2N2222A dla diody LED
 
 Czasami przekaźnik działa niestabilnie, nie przełącza się poprawnie, może powodować zakłócenia albo reagować inaczej niż oczekujemy.
 
@@ -19,7 +19,7 @@ Tranzystor `2N2222A` może działać jak elektroniczny przełącznik. Ma on trzy
 W wielu wersjach `2N2222A`, gdy patrzymy na płaską stronę tranzystora i nóżki są skierowane w dół, kolejność może wyglądać tak:
 
 
-<image src="./images/step-03a-tranzystor.png" controls width="350"></video>
+<image src="./images/step-04a-tranzystor.png" controls width="350"></video>
 
 Ale uwaga: w zależności od producenta kolejność nóżek może być inna. Jeśli układ nie działa, należy sprawdzić dokumentację konkretnego tranzystora albo spróbować zamienić miejscami skrajne nóżki: `E` i `C`.
 
@@ -74,7 +74,7 @@ Oraz koniecznie:
 GND zewnętrznego zasilania -> GND Arduino
 ```
 
-<image src="./images/step-03a-connection.png" controls width="350"></video>
+<image src="./images/step-04a-connection.png" controls width="350"></video>
 
 
 ## Jak to działa?
@@ -90,7 +90,7 @@ Gdy na pinie `D13` pojawi się stan `LOW`, tranzystor przestaje przewodzić i di
 
 ## Kod programu
 
-Odpowiedni kod znajduje się w [src/step_03a](./../src/step_03a/step_03a.ino).
+Odpowiedni kod znajduje się w [src/step_04a](./../src/step_04a/step_04a.ino).
 
 ## Wynik
 

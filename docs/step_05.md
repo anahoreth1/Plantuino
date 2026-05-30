@@ -15,7 +15,7 @@ Posiada dwa przewody:
 
 Po podłączeniu zasilania pompka zaczyna pracować i pompuje wodę.
 
-![Pompka](./images/step-04-pump.png)
+![Pompka](./images/step-05-pump.png)
 
 ## Dlaczego potrzebujemy przekaźnika?
 
@@ -57,7 +57,7 @@ Wyjścia przekaźnika:
 Zatym czarny przewód pompki podlączamy do GND.
 
 
-![Schemat](./images/step-04-connection.png)
+![Schemat](./images/step-05-connection.png)
 
 ## Jak to działa?
 
@@ -70,7 +70,7 @@ Gdy przekaźnik zostanie aktywowany, pompka zacznie pompować wodę.
 
 ## Kod programu
 
-Odpowiedni kod znajduje się w [src/step_04](./../src/step_04/step_04.ino).
+Odpowiedni kod znajduje się w [src/step_05](./../src/step_05/step_05.ino).
 
 ## Wynik
 
@@ -81,7 +81,7 @@ Po uruchomieniu programu:
 
 Przykład:
 
-<video src="./images/step-04-result.MOV" controls width="350"></video>
+<video src="./images/step-05-result.MOV" controls width="350"></video>
 
 ## Uwagi
 
