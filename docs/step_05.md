@@ -1,4 +1,4 @@
-# Krok 4 - Podłączenie pompki wody
+# Krok 5 - Podłączenie pompki wody
 
 W poprzednim kroku nauczyliśmy się sterować przekaźnikiem przy pomocy diody LED.
 

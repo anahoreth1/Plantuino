@@ -1,4 +1,4 @@
-#define BTN_PIN 8
+#define BTN_PIN 2
 #define LED_PIN 13
 
 // czas, do którego będzie pracować
@@ -23,12 +23,6 @@ void loop() {
   if(buttonPushed) {
     enableEndMillis = currentMillis + interval;
   }
-  Serial.print("A: ");
-  Serial.print(enableEndMillis);
-  Serial.print(" B: ");
-  Serial.print(currentMillis);
-  Serial.print(" C: ");
-  Serial.println(buttonPushed);
 
   if(enableEndMillis > currentMillis) {
     digitalWrite(LED_PIN, LOW);
