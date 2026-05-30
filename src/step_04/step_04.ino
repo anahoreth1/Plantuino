@@ -1,4 +1,10 @@
-#define RELAY_PIN 13
+#define RELAY_PIN 7
+
+// zmienna czasu
+unsigned long previousMillis = 0;
+
+// interwał migania
+const long interval = 1000;
 
 // aktualny stan przekaźnika
 bool relayState = false;
@@ -16,10 +22,19 @@ void setup() {
 
 void loop() {
 
-  relayState = !relayState;
-  
-  // sterowanie przekaźnikiem
-  if (relayState) {
+  unsigned long currentMillis = millis();
+
+  // zmiana stanu co 1 sekundę
+  if (currentMillis - previousMillis >= interval) {
+
+    previousMillis = currentMillis;
+
+    // zmiana stanu przekaźnika
+    relayState = !relayState;
+
+    // sterowanie przekaźnikiem
+    if (relayState) {
+
       // włączenie przekaźnika
       // dla większości modułów: LOW = ON
       digitalWrite(RELAY_PIN, LOW);
@@ -29,7 +44,5 @@ void loop() {
       // wyłączenie przekaźnika
       digitalWrite(RELAY_PIN, HIGH);
     }
-  
-  // 3 sekundy czekamy
-  delay(3000);
+  }
 }

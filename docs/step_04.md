@@ -1,43 +1,58 @@
-# Krok 4 - Podłączenie pompki wody
+# Krok 3 - Moduł przekaźnika dla diody LED
 
-W poprzednim kroku nauczyliśmy się sterować przekaźnikiem przy pomocy diody LED.
+W przyszłości chcemy podłączyć pompkę do automatycznego podlewania roślin.  
+Do sterowania pompką potrzebny będzie moduł przekaźnika (relay module).
+Zanim jednak podłączymy prawdziwą pompkę, najpierw nauczymy się obsługi przekaźnika na prostym i bezpiecznym przykładzie: będziemy sterować diodą LED.
 
-Teraz zamiast diody podłączymy prawdziwą pompkę wody, która będzie używana do automatycznego podlewania roślin.
+## Co to jest przekaźnik?
 
-## Pompka wody
+Przekaźnik działa jak elektroniczny przełącznik.
 
-Pompka jest bardzo prosta w obsłudze.
+Arduino może wysłać sygnał do przekaźnika, a przekaźnik włączy lub wyłączy podłączone urządzenie.
 
-Posiada dwa przewody:
+Dzięki temu możemy sterować urządzeniami wymagającymi większego prądu niż może dostarczyć Arduino.
 
-- czerwony — zasilanie `5V`
-- czarny — `GND`
-
-Po podłączeniu zasilania pompka zaczyna pracować i pompuje wodę.
-
-![Pompka](./images/step-04-pump.png)
-
-## Dlaczego potrzebujemy przekaźnika?
-
-Nie chcemy, aby pompka działała cały czas.
-
-Dlatego podłączymy ją przez przekaźnik, dzięki czemu Arduino będzie mogło:
-
-- włączać pompkę
-- wyłączać pompkę
-
-W praktyce wykorzystamy dokładnie to samo połączenie, które stworzyliśmy w kroku 3.  
-Jedyna różnica polega na tym, że zamiast diody LED podłączymy pompkę.
+![Relay](./images/step-03-relay_schema.png)
 
 ## Wymagane elementy
 
 - Arduino UNO
 - Moduł przekaźnika 5V
-- Pompka wody 5V
+- Dioda LED
+- Rezystor 330Ω
 - Przewody połączeniowe
 - Kabel USB
 
+![Części](./images/step-03-parts.png)
+
 ## Schemat połączenia
+
+### Piny przekaźnika
+
+Przekaźnik ma część wejściową oraz wyjściową.
+
+Na wejściu znajdują się znane już piny:
+
+- `IN` — sygnał sterujący z Arduino
+- `GND` — masa
+- `VCC` — zasilanie 5V
+
+W tym projekcie używamy pinu `D7` Arduino do sterowania przekaźnikiem.
+ 
+
+Po drugiej stronie modułu znajdują się trzy złącza:
+
+- `NO` — Normally Open (normalnie otwarte)
+- `COM` — Common (wspólny)
+- `NC` — Normally Closed (normalnie zamknięte)
+
+Na niektórych modułach (jak tutaj u nas) można również zobaczyć chińskie oznaczenia:
+
+- `常开` = `NO` (obok czerwonej diody LED)
+- `公共` = `COM` (środkowy pin)
+- `常闭` = `NC` (obok zielonej diody LED)
+
+![Opis przekaźnika](./images/step-03-relay-labels.png)
 
 Wejścia przekaźnika:
 
@@ -45,48 +60,47 @@ Wejścia przekaźnika:
 |---|---|
 | VCC | 5V |
 | GND | GND |
-| IN | D13 |
+| IN | D7 |
 
 Wyjścia przekaźnika:
 
 | Element | Połączenie |
 |---|---|
 | COM | 5V |
-| NO | czerwony przewód pompki |
- 
-Zatym czarny przewód pompki podlączamy do GND.
+| NO | Anoda LED | 
+
+Zatym katodą LED lączymy do rezystor 330Ω, a zatym do GND.
 
 
-![Schemat](./images/step-04-connection.png)
+![Schemat](./images/step-03-connection.png)
 
 ## Jak to działa?
 
-Po uruchomieniu programu Arduino będzie co kilka sekund:
+Po uruchomieniu programu Arduino będzie co sekundę włączać i  wyłączać przekaźnik.
 
-- włączać pompkę
-- wyłączać pompkę
-
-Gdy przekaźnik zostanie aktywowany, pompka zacznie pompować wodę.
+Gdy przekaźnik zostanie aktywowany, dioda LED zapali się.
 
 ## Kod programu
 
-Odpowiedni kod znajduje się w [src/step_04](./../src/step_04/step_04.ino).
+Odpowiedni kod znajduje się w [src/step_03](./../src/step_03/step_03.ino).
 
 ## Wynik
 
 Po uruchomieniu programu:
 
-- przekaźnik będzie klikał
-- pompka będzie okresowo się uruchamiać
+- przekaźnik będzie wydawał charakterystyczne kliknięcie
+- dioda LED będzie migać co sekundę
 
 Przykład:
 
-<video src="./images/step-04-result.MOV" controls width="350"></video>
+<video src="./images/step-03-result.mp4" controls width="300"></video>
 
 ## Uwagi
 
-- Nigdy nie uruchamiaj pompki bez wody na dłuższy czas
-- Jeśli pompka nie działa:
-  - sprawdź zasilanie 5V
-  - sprawdź połączenia przekaźnika
-  - upewnij się, że przekaźnik się aktywuje
+- Niektóre moduły przekaźników działają odwrotnie:
+  - `LOW` = włączony
+  - `HIGH` = wyłączony
+- Jeśli LED świeci cały czas, spróbuj odwrócić logikę w kodzie
+- W następnym kroku zamiast diody LED podłączymy pompkę wody
+- Jeśli przekaźnik działa niestabilnie, sprobuj użyć tranzystora z kroku 3a
+ 
