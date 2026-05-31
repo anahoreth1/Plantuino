@@ -65,3 +65,11 @@ Dlatego dla zainteresowanych przygotowano dodatkowe kroki:
 - Krok 5a. Sterowanie pompką przy pomocy tranzystora 2N2222A
 
 Te kroki są opcjonalne i pokazują alternatywne rozwiązanie bez użycia przekaźnika.
+
+## Przykłady
+
+### Część 1:
+<image src="./docs/images/step-03-connection.png" controls width="700"></image>
+
+### Część 2:
+<image src="./docs/images/step-05-connection.png" width="700"  ></image>
